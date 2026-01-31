@@ -6,7 +6,7 @@ commonLabels:
   app: kustomwebapp
 
 commonAnnotations:
-  app: mykustom-annontations
+  app: mykustom-annotations
 
 namePrefix:
   kustom-
