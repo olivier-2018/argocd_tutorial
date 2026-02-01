@@ -8,7 +8,7 @@ spec:
     spec: # Pod spec
       containers:
       - name: mycontainer
-        image: "olivier2018/my-flask-app:latest"
+        image: "olivier2018/flaskapp:latest"
         ports:
         - containerPort: 5000
         envFrom:

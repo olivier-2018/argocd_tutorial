@@ -26,7 +26,7 @@ kubectl port-forward service/argocd-server -n argocd 8080:443
 kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
 ```
 
-## Install ArgoCD CLI & Login via CLI
+## ArgoCD Login via ArgoCD-CLI 
 ```
 # Install argoCD CLI --> 
 # Port forward (if not done above)
@@ -48,7 +48,7 @@ argocd app sync argocd/webapp-kustom-prod
 k create namespace prod 
 ```
 
-## Command Cheat sheet
+### ArgoCD CLI Command Cheat sheet
 ```
 argocd app create #Create a new Argo CD application.
 argocd app list #List all applications in Argo CD.
@@ -60,6 +60,23 @@ argocd app history <appname> #Get information about an Argo CD application.
 argocd app rollback <appname> #Rollback to a previous version
 argocd app set <appname> #Set the application’s configuration.
 argocd app delete <appname> #Delete an Argo CD application.
+```
+
+## Accessing App on browser
+```
+# Set contect to dev namespace (if required)
+kubectl config set-context minikube --namespace dev
+# Get all resources to identify service name
+kubectl get all
+# Port forward of app service (assuming that container app is listening on port 80)
+kubectl port-forward service/kustom-mywebapp-v1 -n dev 3000:80
+# Accessing app on browser --> localhost:3000
+```
+
+## Removing apps and closing minikube
+```
+argocd app delete <appname> 
+minikube stop
 ```
 
 ## Thanks:
