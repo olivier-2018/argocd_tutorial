@@ -3,8 +3,9 @@ kind: Service
 metadata:
   name: mywebapp
 spec:
-  ports:
-  - port: 80
-    protocol: TCP
-    name: flask
   type: NodePort
+  ports:
+  - name: flask
+    port: 80
+    targetPort: 5000
+    protocol: TCP

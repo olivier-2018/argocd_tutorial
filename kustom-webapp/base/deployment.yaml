@@ -8,9 +8,9 @@ spec:
     spec: # Pod spec
       containers:
       - name: mycontainer
-        image: "devopsjourney1/mywebapp:latest"
+        image: "olivier2018/my-flask-app:latest"
         ports:
-        - containerPort: 80
+        - containerPort: 5000
         envFrom:
         - configMapRef:
             name: mykustom-map
