@@ -3,4 +3,4 @@ replicas: 2
 
 configmap:
   data:
-    CUSTOM_HEADER: 'This is on the DEV environment of the Helm app!'
+    CUSTOM_HEADER: 'The app is deployed in the DEV environment using Helm chart !'
